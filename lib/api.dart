@@ -17,6 +17,7 @@ import "package:flutter_cache_manager/flutter_cache_manager.dart";
 import "package:path_provider/path_provider.dart";
 
 import "package:inventree/api_form.dart";
+import "package:inventree/sqlite_bridge.dart";
 import "package:inventree/app_colors.dart";
 import "package:inventree/auth/auth_result.dart";
 import "package:inventree/auth/session_store.dart";
@@ -1898,6 +1899,11 @@ class InvenTreeAPI {
     Map<String, String> headers = const {},
     int? expectedStatusCode = 200,
   }) async {
+    if (url == "part/") {
+      final data = await SQLiteBridge.getParts();
+      return APIResponse(statusCode: 200, data: data);
+    }
+
     HttpClientRequest? request = await apiRequest(
       url,
       "GET",
