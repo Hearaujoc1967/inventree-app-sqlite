@@ -41,33 +41,45 @@ class ThemeSelectionDialog extends StatelessWidget {
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          RadioGroup<AdaptiveThemeMode>(
-            groupValue: currentThemeMode,
-            onChanged: (value) {
-              if (value != null) {
-                AdaptiveTheme.of(context).setThemeMode(value);
-                onThemeSelected();
-              }
-            },
-            child: Column(
-              children: [
+          Column(
+            children: [
                 RadioListTile<AdaptiveThemeMode>(
                   value: AdaptiveThemeMode.system,
+                  groupValue: currentThemeMode,
+                  onChanged: (value) {
+                    if (value != null) {
+                      AdaptiveTheme.of(context).setThemeMode(value);
+                      onThemeSelected();
+                    }
+                  },
                   title: Text(L10().system),
                   secondary: Icon(TablerIcons.device_desktop),
                 ),
                 RadioListTile<AdaptiveThemeMode>(
                   value: AdaptiveThemeMode.light,
+                  groupValue: currentThemeMode,
+                  onChanged: (value) {
+                    if (value != null) {
+                      AdaptiveTheme.of(context).setThemeMode(value);
+                      onThemeSelected();
+                    }
+                  },
                   title: Text(L10().lightMode),
                   secondary: Icon(TablerIcons.sun),
                 ),
                 RadioListTile<AdaptiveThemeMode>(
                   value: AdaptiveThemeMode.dark,
+                  groupValue: currentThemeMode,
+                  onChanged: (value) {
+                    if (value != null) {
+                      AdaptiveTheme.of(context).setThemeMode(value);
+                      onThemeSelected();
+                    }
+                  },
                   title: Text(L10().darkMode),
                   secondary: Icon(TablerIcons.moon),
                 ),
-              ],
-            ),
+            ],
           ),
         ],
       ),
