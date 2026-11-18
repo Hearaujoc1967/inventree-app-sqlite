@@ -34,7 +34,7 @@ dependencies:
   http: ^1.4.0
   sqflite: ^2.3.0
   image: ^4.5.4                           # Re-encode/compress images before upload
-  image_picker: ^1.2.2                    # Select or take photos
+  image_picker: ^1.2.1                    # Select or take photos
   infinite_scroll_pagination: ^4.0.0      # Let the server do all the work!
   intl: ^0.20.2
   mobile_scanner: ^7.2.0                  # Barcode scanning support
